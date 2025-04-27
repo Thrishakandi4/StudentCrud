@@ -7,8 +7,14 @@ require('dotenv').config();  // Load environment variables
 const app = express();
 const PORT = process.env.PORT || 5002;
 
-// Middleware
-app.use(cors());
+// CORS configuration
+const corsOptions = {
+  origin: process.env.FRONTEND_URL,  // Using the FRONTEND_URL from .env
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+};
+
+app.use(cors(corsOptions));  // Apply CORS middleware with specified options
 app.use(express.json());
 
 // Connect to MongoDB
