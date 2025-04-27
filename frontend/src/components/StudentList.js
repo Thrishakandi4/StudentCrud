@@ -12,7 +12,7 @@ function StudentList() {
   }, []);
 
   const fetchStudents = () => {
-    axios.get('http://localhost:5002/api/students')  // Updated URL
+    axios.get('https://studentcrud-backend.onrender.com/api/students')  // Updated URL
       .then(response => {
         setStudents(response.data);
         setLoading(false);
@@ -25,7 +25,7 @@ function StudentList() {
 
   const handleDelete = (id) => {
     if (window.confirm('Are you sure you want to delete this student?')) {
-      axios.delete(`http://localhost:5002/api/students/${id}`)  // Updated URL
+      axios.delete(`https://studentcrud-backend.onrender.com/api/students/${id}`)  // Updated URL
         .then(() => {
           alert('Student deleted successfully!');
           fetchStudents(); // Refresh after deletion
