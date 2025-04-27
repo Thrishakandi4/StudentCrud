@@ -29,7 +29,7 @@ function AddStudent() {
     console.log('Submitting student data:', student);
 
     // Use environment variable for backend URL
-    const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5002/api/students';
+    const backendUrl = process.env.REACT_APP_BACKEND_URL || 'https://studentcrud-backend.onrender.com/api/students';
 
     try {
       const response = await axios.post(backendUrl, student);
