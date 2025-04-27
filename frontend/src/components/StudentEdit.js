@@ -17,7 +17,7 @@ function StudentEdit() {
   });
 
   useEffect(() => {
-    axios.get(`https://studentproject-backend.onrender.com/${id}`)
+    axios.get(`https://studentcrud-backend.onrender.com/${id}`)
       .then(response => {
         setStudent(response.data);
       })
@@ -36,7 +36,7 @@ function StudentEdit() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.put(`https://studentproject-backend.onrender.com/${id}`, student)
+    axios.put(`https://studentcrud-backend.onrender.com/${id}`, student)
       .then(() => {
         alert('Student updated successfully!');
         navigate('/students');
